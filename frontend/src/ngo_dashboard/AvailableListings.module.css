@@ -1,0 +1,225 @@
+/* Styles for Available Listings page (NGO) */
+
+.availableListingsContainer {
+  padding: 2rem;
+  font-family: sans-serif;
+}
+
+.availableListingsContainer h2 {
+  color: #800000; /* Maroon heading */
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Search Bar Styles */
+.searchContainer {
+  margin-bottom: 1.5rem;
+  position: relative; /* For icon positioning */
+  width: 100%;
+  max-width: 500px; /* Limit search bar width */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #adb5bd; /* Light grey icon */
+  font-size: 1rem;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 0.8rem 1rem 0.8rem 2.8rem; /* Padding left for icon */
+  border: 1px solid #ced4da;
+  border-radius: 50px; /* Pill shape */
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.searchInput::placeholder {
+  color: #adb5bd;
+}
+
+.searchInput:focus {
+  border-color: #1a8a46; /* Primary Green */
+  box-shadow: 0 0 0 3px rgba(26, 138, 70, 0.1); /* Green shadow */
+  outline: none;
+}
+
+.searchInput:focus + .searchIcon {
+  color: #1a8a46; /* Change icon color on focus */
+}
+
+.errorMessage {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 0.9rem 1.2rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.listingsTable {
+  width: 100%;
+  border-collapse: separate; /* Use separate for border-radius on cells */
+  border-spacing: 0; /* Remove default spacing */
+  margin-top: 1.5rem; /* More space above table */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Slightly softer shadow */
+  border-radius: 8px; /* Rounded corners for the table wrapper */
+  overflow: hidden; /* Clip cell borders */
+  border: 1px solid #e0e0e0; /* Outer border */
+}
+
+.listingsTable th,
+.listingsTable td {
+  /* border: 1px solid #ddd; */ /* Remove individual borders */
+  border-bottom: 1px solid #e0e0e0; /* Bottom border for separation */
+  padding: 1rem 1.2rem; /* Increased padding */
+  text-align: left;
+  vertical-align: middle;
+  font-size: 0.95rem;
+}
+
+.listingsTable th {
+  background-color: #f8f9fa; /* Lighter grey header */
+  font-weight: 600; /* Bolder header text */
+  color: #495057;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  border-bottom-width: 2px; /* Thicker bottom border for header */
+  border-color: #dee2e6;
+}
+
+/* Remove bottom border from last row cells */
+.listingsTable tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Remove alternating row color for cleaner look */
+/* .listingsTable tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+} */
+
+.listingsTable tbody tr {
+  transition: background-color 0.2s ease, transform 0.2s ease; /* Add transition */
+}
+
+.listingsTable tbody tr:hover {
+  background-color: #f1f1f1; /* Keep light hover */
+  transform: scale(1.01); /* Slight scale effect on hover */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Add shadow on hover row */
+  cursor: default; /* Indicate row isn't directly clickable */
+}
+
+/* Style specific columns if needed (e.g., center actions) */
+.listingsTable td:last-child {
+    text-align: center;
+}
+
+/* Enhanced Claim Button */
+.claimButton {
+  padding: 0.6rem 1.2rem;
+  background: linear-gradient(90deg, #1a8a46, #28a745); /* Green gradient */
+  color: white;
+  border: none;
+  border-radius: 50px; /* Pill shape */
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  display: inline-flex; /* Align icon and text */
+  align-items: center;
+  gap: 0.5rem; /* Space between icon and text */
+  box-shadow: 0 2px 5px rgba(40, 167, 69, 0.2);
+}
+
+.claimButton:hover {
+  background: linear-gradient(90deg, #166d38, #218838); /* Darker green */
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
+}
+
+/* Add styles for potential icons in table */
+.tableIcon {
+    margin-right: 0.6rem;
+    color: #6c757d; /* Subtle grey icons */
+    vertical-align: middle;
+    font-size: 1.1em;
+}
+
+/* --- Claim Success Notification Box --- */
+.claimNotificationBox {
+  background-color: #e2f7ed; /* Light green background */
+  color: #1f7a4a; /* Darker green text */
+  border: 1px solid #b3e6c7;
+  border-left: 5px solid #28a745; /* Solid green left border */
+  padding: 1rem 1.5rem;
+  margin: 1.5rem auto; /* Center horizontally */
+  border-radius: 8px;
+  max-width: 90%; /* Limit width */
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative; /* For absolute positioning of close button */
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  /* Optional: Add animation for appearance */
+  animation: fadeIn 0.5s ease-out;
+}
+
+.claimNotificationBox .notificationIcon {
+  font-size: 1.5rem;
+  flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.claimNotificationBox p {
+  margin: 0;
+  flex-grow: 1; /* Allow text to take available space */
+  line-height: 1.5;
+}
+
+.claimNotificationBox strong {
+  font-weight: 600; /* Make details stand out */
+  color: #165a36; /* Even darker green for emphasis */
+}
+
+.closeNotificationButton {
+  background: none;
+  border: none;
+  color: #1f7a4a; /* Match text color */
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.3rem;
+  line-height: 1;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+  /* Position top right */
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+}
+
+.closeNotificationButton:hover {
+  opacity: 1;
+}
+
+/* Optional Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Notification icon colors */
+.notificationIcon {
+  color: #1a8a46; /* Primary Green */
+} 

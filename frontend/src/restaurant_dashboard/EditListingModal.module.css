@@ -1,0 +1,117 @@
+/* Modal styling */
+.modalBackdrop {
+  position: fixed; /* Stay in place */
+  z-index: 100; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalContent {
+  background-color: #fefefe;
+  margin: auto; /* Auto margins for centering */
+  padding: 25px 30px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 90%; /* Could be more dynamic */
+  max-width: 500px; /* Maximum width */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.modalContent h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: #333;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+/* Form group styling similar to AddFoodListing */
+.formGroup {
+  margin-bottom: 1rem;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #555;
+}
+
+.formGroup input[type="text"],
+.formGroup input[type="date"] {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  font-size: 1rem;
+}
+
+.formGroup input:focus {
+  outline: none;
+  border-color: #007bff; /* Highlight focus */
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+/* Error Message */
+.errorMessage {
+  color: #dc3545; /* Bootstrap danger color */
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border-radius: 0.25rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Button styling */
+.buttonGroup {
+  display: flex;
+  justify-content: flex-end; /* Align buttons to the right */
+  gap: 0.8rem; /* Space between buttons */
+  margin-top: 1.5rem;
+}
+
+.submitButton,
+.cancelButton {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.submitButton {
+  background-color: #28a745; /* Green */
+  color: white;
+}
+
+.submitButton:hover:not(:disabled) {
+  background-color: #218838;
+}
+
+.cancelButton {
+  background-color: #6c757d; /* Gray */
+  color: white;
+}
+
+.cancelButton:hover:not(:disabled) {
+  background-color: #5a6268;
+}
+
+.submitButton:disabled,
+.cancelButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+} 

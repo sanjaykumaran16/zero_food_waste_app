@@ -1,0 +1,91 @@
+.loginContainer {
+  max-width: 500px;
+  margin: 3rem auto;
+  padding: 2.5rem;
+  background-color: #ffffff; /* White background */
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e9ecef; /* Subtle border */
+}
+
+.loginContainer h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #800000; /* Maroon heading */
+  font-weight: 600;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 0.6rem;
+  font-weight: 500;
+  color: #495057; /* Darker grey label text */
+}
+
+.formGroup input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #495057; /* Input text color */
+  background-color: #ffffff; /* Input background */
+  box-sizing: border-box; 
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.formGroup input:focus {
+  border-color: #800000;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(128, 0, 0, 0.25); /* Maroon focus glow */
+}
+
+.loginButton {
+  width: 100%;
+  padding: 0.9rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #ffffff; /* White text */
+  background-color: #800000; /* Maroon background */
+  border: 1px solid #800000;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+  margin-top: 1rem;
+}
+
+.loginButton:hover {
+  background-color: #a52a2a; /* Lighter maroon hover */
+  border-color: #a52a2a;
+  transform: translateY(-1px);
+}
+
+.loginButton:disabled {
+  background-color: #adb5bd;
+  border-color: #adb5bd;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.error {
+  color: #dc3545; /* Standard error red */
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.link {
+  display: block;
+  text-align: center;
+  margin-top: 1.5rem;
+  color: #800000; /* Maroon link */
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+} 

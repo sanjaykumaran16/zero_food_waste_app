@@ -1,0 +1,152 @@
+/* NotificationsPage.module.css */
+
+.notificationsContainer {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.notificationsContainer h1 {
+  color: #800000; /* Maroon */
+  margin-bottom: 0; /* Remove bottom margin as it's handled by container */
+  text-align: center;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-grow: 1; /* Allow title to take space */
+}
+
+.loading, .noNotifications {
+  text-align: center;
+  color: #6c757d;
+  font-size: 1.1rem;
+  margin-top: 3rem;
+}
+
+.errorMessage {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 1rem;
+  border-radius: 6px;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.notificationList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.notificationItem {
+  display: flex;
+  align-items: flex-start; /* Align icon top */
+  gap: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #e9ecef;
+  /* Add transition for background-color and transform */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.notificationItem:last-child {
+  border-bottom: none;
+}
+
+.notificationItem:hover {
+  background-color: #f8f9fa;
+  transform: translateY(-3px); /* Slight lift on hover */
+}
+
+/* Style for unread notifications */
+.unread {
+  background-color: #fffaf0; /* Light yellow/orange */
+  border-left: 4px solid #ffc107; /* Amber border */
+}
+
+.unread:hover {
+   background-color: #fff8e1; /* Slightly lighter on hover */
+   /* The translateY from .notificationItem:hover will still apply */
+}
+
+/* Style for read notifications (optional, less emphasis) */
+.read {
+  opacity: 0.8;
+}
+
+.notificationIcon {
+  color: #800000; /* Maroon */
+  font-size: 1.8rem;
+  margin-top: 0.2rem; /* Adjust vertical alignment */
+}
+
+.notificationContent {
+  flex-grow: 1;
+}
+
+.message {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #343a40;
+  line-height: 1.5;
+}
+
+.foodItem {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin: 0.3rem 0;
+}
+
+.timestamp {
+  font-size: 0.85rem;
+  color: #adb5bd;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between; /* Push title and button apart */
+  align-items: center;
+  margin-bottom: 2rem; /* Add space below header */
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+  gap: 1rem;
+}
+
+.clearAllButton {
+  padding: 0.6rem 1.2rem;
+  background-color: #f8d7da; /* Light red background */
+  color: #721c24; /* Dark red text */
+  border: 1px solid #f5c6cb;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.clearAllButton:hover:not(:disabled) {
+  background-color: #f1b0b7;
+  color: #58151c;
+}
+
+.clearAllButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.clearingMessage {
+    color: #6c757d;
+    font-style: italic;
+} 

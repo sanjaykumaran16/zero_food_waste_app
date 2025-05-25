@@ -1,0 +1,172 @@
+.homeContainer {
+  /* Container specific styles if needed */
+}
+
+/* Hero Section */
+.heroSection {
+  text-align: center;
+  padding: 5rem 1rem; 
+  background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end)); /* Use variables */
+  color: var(--text-on-gradient);
+  border-radius: 40px; /* Apply border-radius to all corners */
+}
+
+.heroSection h1 {
+  font-size: 3rem; 
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: var(--text-on-gradient);
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  margin-bottom: 2.5rem;
+  color: var(--text-on-gradient); /* Keep whiteish */
+  font-weight: 300;
+}
+
+.ctaButtons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap; /* Allow wrapping */
+}
+
+.ctaButton {
+  padding: 0.9rem 2rem; 
+  font-size: 1.05rem;
+  color: var(--accent-primary);
+  background-color: var(--card-bg); /* Use card bg for button */
+  border: 1px solid transparent;
+  border-radius: 25px; 
+  text-decoration: none;
+  font-weight: 500;
+  /* Adjust transition for text color, transform, shadow */
+  transition: color 0.4s ease-in-out, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  /* Add positioning and overflow for pseudo-element */
+  position: relative;
+  overflow: hidden;
+  z-index: 1; /* Ensure text is above pseudo-element */
+}
+
+/* Add pseudo-element for the wipe effect */
+.ctaButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0; /* Start hidden */
+  height: 100%;
+  background: linear-gradient(to right, var(--accent-primary-darker), var(--accent-primary), var(--accent-primary)); /* Adjusted gradient */
+  transition: width 0.4s ease-in-out;
+  z-index: -1; /* Behind text */
+}
+
+.ctaButton:hover {
+  /* Remove background changes, handled by ::before */
+  /* background-image: linear-gradient(135deg, #166d38, #1a8a46); */ 
+  /* background-color: transparent; */ 
+  color: var(--button-text);
+  /* Keep transform and shadow */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  /* No outline needed */
+  /* outline: none; */
+}
+
+/* Expand the pseudo-element on hover */
+.ctaButton:hover::before {
+  width: 100%;
+}
+
+/* Features Section */
+.featuresSection {
+  padding: 4rem 1rem;
+  text-align: center;
+  background-color: var(--section-bg); /* Use the new section background variable */
+  transition: background-color 0.3s ease;
+}
+
+.featuresSection h2 {
+  font-size: 2.2rem;
+  color: var(--accent-primary);
+  margin-bottom: 3rem;
+  font-weight: 600;
+}
+
+.featuresGrid { 
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.featureCard {
+  background-color: var(--card-bg);
+  padding: 2rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px var(--card-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  border: 1px solid var(--card-border);
+  color: var(--text-primary);
+}
+
+.featureCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px var(--card-shadow); /* Adjust shadow darkness */
+  background-color: var(--accent-primary);
+  color: var(--button-text);
+  border-color: var(--accent-primary-darker);
+}
+
+.featureIcon {
+  color: var(--accent-primary);
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+.featureCard:hover .featureIcon {
+  color: var(--button-text);
+}
+
+.featureCard h3 {
+  font-size: 1.3rem;
+  color: var(--text-primary);
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.featureCard:hover h3 {
+  color: var(--button-text);
+}
+
+.featureCard p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  transition: color 0.3s ease;
+}
+
+.featureCard:hover p {
+  color: var(--button-text);
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .heroSection h1 {
+    font-size: 3.5rem;
+  }
+  .subtitle {
+    font-size: 1.4rem;
+  }
+  .featuresGrid {
+     grid-template-columns: repeat(3, 1fr); 
+  }
+}
+
+@media (min-width: 992px) {
+  .heroSection h1 {
+    font-size: 4rem;
+  }
+} 
