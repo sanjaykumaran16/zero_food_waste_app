@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import styles from './AddFoodListing.module.css'; // We'll create this CSS module next
+import styles from './AddFoodListing.module.css';
 
 function AddFoodListing() {
   const [formData, setFormData] = useState({
     food_name: '',
-    quantity: '',    // As per schema, using string. Consider number input if more appropriate.
-    expiry_time: '', // Use YYYY-MM-DDTHH:mm format for datetime-local input
+    quantity: '',
+    expiry_time: '',
   });
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
@@ -33,20 +33,15 @@ function AddFoodListing() {
         return;
     }
 
-    // --- Authentication --- 
-    // Get token (assuming it was stored during restaurant login)
-    const token = localStorage.getItem('restaurantToken'); 
+    const token = localStorage.getItem('restaurantToken');
     if (!token) {
         setError('You must be logged in as a restaurant to add food.');
-        // Optional: redirect to login
         return;
     }
-    // --------
 
     const apiUrl = `${import.meta.env.VITE_API_URL}/api/food/add`;
-    console.log('Attempting to add food listing to:', apiUrl);
+      console.log('Attempting to add food listing to:', apiUrl);
 
-    // Prepare data matching the backend schema
     const listingData = {
         food_name,
         quantity,
@@ -72,8 +67,7 @@ function AddFoodListing() {
       // Handle successful submission
       console.log('Food listing added:', data);
       setSuccess('Food listing added successfully!');
-      // Clear form fields matching the Food schema
-      setFormData({ food_name: '', quantity: '', expiry_time: '' }); 
+      setFormData({ food_name: '', quantity: '', expiry_time: '' });
 
     } catch (err) {
       console.error('Add food listing error:', err);
@@ -109,4 +103,4 @@ function AddFoodListing() {
   );
 }
 
-export default AddFoodListing; 
+export default AddFoodListing;

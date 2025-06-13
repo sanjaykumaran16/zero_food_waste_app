@@ -30,7 +30,7 @@ function RestaurantDashboard() {
       const token = localStorage.getItem('restaurantToken');
 
       if (!token) {
-        setDataError('Authentication token not found. Please log in again.');
+        setDataError('Could not find your login. Please sign in again.');
         setIsLoadingData(false);
         return;
       }
@@ -43,7 +43,7 @@ function RestaurantDashboard() {
 
         if (!response.ok) {
           const errorData = await response.json().catch(() => ({}));
-          throw new Error(errorData.message || 'Failed to fetch dashboard data.');
+          throw new Error(errorData.message || 'Could not load your dashboard.');
         }
         const data = await response.json();
         
@@ -58,7 +58,7 @@ function RestaurantDashboard() {
 
       } catch (err) {
         console.error('Error fetching dashboard data:', err);
-        setDataError(err.message || 'Failed to load dashboard data.');
+        setDataError(err.message || 'Could not load your dashboard.');
       } finally {
         setIsLoadingData(false);
       }
@@ -79,7 +79,7 @@ function RestaurantDashboard() {
             <span className={styles.boxIcon}><FaInfoCircle /></span>
             <p>
                 You have <strong>{unreadCount}</strong> unread notification{unreadCount !== 1 ? 's' : ''}. 
-                Check the <a href="/restaurant/dashboard/notifications" onClick={() => setShowLoginNotification(false)}>Notifications tab</a>.
+                Check your <a href="/restaurant/dashboard/notifications" onClick={() => setShowLoginNotification(false)}>notifications</a>.
             </p>
             <button 
                 className={styles.closeBoxButton}
@@ -93,12 +93,12 @@ function RestaurantDashboard() {
 
       {/* Welcome Message */}
       {isLoadingData ? (
-        <p className={styles.loadingMessage}>Loading dashboard...</p> // Use specific class
+        <p className={styles.loadingMessage}>Just a moment, we're loading your dashboard...</p>
       ) : dataError ? (
         <p className={styles.errorMessage}>{dataError}</p>
       ) : restaurantDetails && (
         <div className={styles.welcomeSection}>
-          <h2>Welcome, {restaurantDetails.name}!</h2>
+          <h2>Hi {restaurantDetails.name}, welcome back!</h2>
           {/* Optional: Display total listings or other stats here */}
           {/* <p className={styles.stats}>You have added <strong>{listingsCount}</strong> food listing{listingsCount !== 1 ? 's' : ''} so far.</p> */}
         </div>
@@ -113,7 +113,7 @@ function RestaurantDashboard() {
               <div className={styles.cardIcon}><FaCheckCircle /></div>
               <div className={styles.cardContent}>
                 <span className={styles.cardNumber}>{listingCounts.collected}</span>
-                <span className={styles.cardLabel}>Listings Claimed</span>
+                <span className={styles.cardLabel}>Claimed</span>
               </div>
             </div>
 
@@ -122,7 +122,7 @@ function RestaurantDashboard() {
                <div className={styles.cardIcon}><FaListAlt /></div>
               <div className={styles.cardContent}>
                 <span className={styles.cardNumber}>{listingCounts.available}</span>
-                <span className={styles.cardLabel}>Listings Available</span>
+                <span className={styles.cardLabel}>Available</span>
               </div>
             </div>
 
@@ -131,7 +131,7 @@ function RestaurantDashboard() {
                <div className={styles.cardIcon}><FaTimesCircle /></div>
               <div className={styles.cardContent}>
                 <span className={styles.cardNumber}>{listingCounts.expired}</span>
-                <span className={styles.cardLabel}>Listings Expired</span>
+                <span className={styles.cardLabel}>Expired</span>
               </div>
             </div>
 
@@ -143,7 +143,7 @@ function RestaurantDashboard() {
         <>
         <hr className={styles.divider} /> 
         <div className={styles.detailsSection}>
-            <h3>Your Restaurant Details</h3>
+            <h3>Your Restaurant Info</h3>
             <p><span className={styles.detailIcon}><FaUtensils /></span><strong>Name:</strong> {restaurantDetails.name}</p>
             <p><span className={styles.detailIcon}><FaEnvelope /></span><strong>Email:</strong> {restaurantDetails.email}</p>
             <p><span className={styles.detailIcon}><FaMapMarkerAlt /></span><strong>Address:</strong> {restaurantDetails.address}</p>

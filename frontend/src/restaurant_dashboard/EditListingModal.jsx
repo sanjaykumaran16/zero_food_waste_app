@@ -65,8 +65,8 @@ function EditListingModal({ listing, onClose, onUpdate }) {
     }
 
     try {
-      const response = await fetch(`/api/foodlistings/${listing._id}`, { // Endpoint to UPDATE the listing
-        method: 'PUT', // Use PUT for updates
+      const response = await fetch(`/api/foodlistings/${listing._id}`, {
+        method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`,
@@ -80,7 +80,6 @@ function EditListingModal({ listing, onClose, onUpdate }) {
         throw new Error(updatedListingData.message || `HTTP error! status: ${response.status}`);
       }
 
-      console.log('Listing updated successfully:', updatedListingData);
       onUpdate(updatedListingData); // Call the onUpdate prop with the updated data from backend
       onClose(); // Close the modal on success
 
@@ -160,4 +159,4 @@ function EditListingModal({ listing, onClose, onUpdate }) {
   );
 }
 
-export default EditListingModal; 
+export default EditListingModal;

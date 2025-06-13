@@ -1,36 +1,36 @@
 const mongoose = require('mongoose');
 
 const notificationSchema = new mongoose.Schema({
-  recipient: { // The user receiving the notification (Restaurant in this case)
+  recipient: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
-    ref: 'Restaurant' 
+    ref: 'Restaurant',
   },
-  senderNgo: { // The NGO who triggered the notification
+  senderNgo: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
-    ref: 'NGO'
+    ref: 'NGO',
   },
-  foodListing: { // The related food listing
+  foodListing: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
-    ref: 'FoodListing'
+    ref: 'FoodListing',
   },
-  message: { // A descriptive message
+  message: {
     type: String,
     required: true,
   },
-  type: { // Type of notification (e.g., 'Claim')
+  type: {
     type: String,
-    enum: ['Claim', 'System', 'Message'], // Add other types as needed
+    enum: ['Claim', 'System', 'Message'],
     default: 'Claim',
   },
-  isRead: { // Status if the notification has been seen
+  isRead: {
     type: Boolean,
     default: false,
   },
 }, {
-  timestamps: true // Adds createdAt and updatedAt automatically
+  timestamps: true,
 });
 
-module.exports = mongoose.model('Notification', notificationSchema); 
+module.exports = mongoose.model('Notification', notificationSchema);

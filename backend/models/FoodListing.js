@@ -4,7 +4,7 @@ const FoodListingSchema = new mongoose.Schema({
   restaurant: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
-    ref: 'Restaurant', // Assumes you have a 'Restaurant' model
+    ref: 'Restaurant',
   },
   itemName: {
     type: String,
@@ -12,33 +12,32 @@ const FoodListingSchema = new mongoose.Schema({
     trim: true,
   },
   quantity: {
-    type: String, // Using String for flexibility (e.g., "approx 5kg", "10 meals")
+    type: String,
     required: [true, 'Please add the quantity'],
   },
   expiryDate: {
     type: Date,
     required: [true, 'Please add the expiry date'],
   },
-  address: { // Denormalizing address for easier display for NGOs
+  address: {
     type: String,
-    required: true, 
+    required: true,
   },
   listedAt: {
     type: Date,
     default: Date.now,
   },
-  status: { // Track the status of the listing
+  status: {
     type: String,
     required: true,
-    enum: ['Available', 'Collected', 'Expired'], // Example statuses
+    enum: ['Available', 'Collected', 'Expired'],
     default: 'Available',
   },
-  collectedByNgo: { // Reference to the NGO that collected the food
+  collectedByNgo: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'NGO', // Match the exported model name 'NGO' (was 'Ngo')
-    default: null // Initially null, set when an NGO collects it
-  }
-  // Consider adding a status field later (e.g., 'available', 'claimed', 'picked-up')
+    ref: 'NGO',
+    default: null,
+  },
 });
 
-module.exports = mongoose.model('FoodListing', FoodListingSchema); 
+module.exports = mongoose.model('FoodListing', FoodListingSchema);

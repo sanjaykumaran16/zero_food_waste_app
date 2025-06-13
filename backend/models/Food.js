@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const FoodSchema = new mongoose.Schema({
   restaurantId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Restaurant', // Reference to the Restaurant model
+    ref: 'Restaurant',
     required: [true, 'Restaurant reference is required'],
   },
   foodName: {
@@ -27,10 +27,10 @@ const FoodSchema = new mongoose.Schema({
     enum: ['Available', 'Requested', 'Picked'],
     default: 'Available',
   },
-  createdAt: { // Adding a timestamp for record creation
+  createdAt: {
     type: Date,
     default: Date.now,
   },
 });
 
-module.exports = mongoose.model('Food', FoodSchema); 
+module.exports = mongoose.model('Food', FoodSchema);

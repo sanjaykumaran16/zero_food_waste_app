@@ -39,7 +39,6 @@ function NgoRegistration() {
     }
 
     const apiUrl = `${import.meta.env.VITE_API_URL}/api/ngos/register`;
-    console.log('Attempting NGO registration to:', apiUrl);
     
     // Prepare data matching the backend schema (currently placeholder uses form data directly)
     const registrationData = {
@@ -65,11 +64,10 @@ function NgoRegistration() {
       }
 
       // Handle successful registration
-      console.log('Registration successful:', data);
       setSuccess('Registration successful! You can now log in.');
       setFormData({ // Clear form
         name: '', contact_person: '', email: '', phone: '', address: '', password: '', contactNumber: '' // Clear new fields too
-      }); 
+      });
       // Optional: Store token if registration returns one, then redirect
       // localStorage.setItem('ngoToken', data.token);
       // setTimeout(() => navigate('/ngo/login'), 2000); // If using react-router navigate
@@ -78,12 +76,6 @@ function NgoRegistration() {
       console.error('Registration error:', err);
       setError(err.message || 'Registration failed. Please try again.');
     }
-     // Remove placeholder alert
-     // alert('Registration functionality not yet implemented. Check console for data.'); 
-     // Remove placeholder success
-     // setSuccess('Placeholder: Registration submitted! Check console.'); 
-     // Clearing form is now handled in try block on success
-     // setFormData({ name: '', contact_person: '', email: '', phone: '', address: '', password: '' });
   };
 
   return (
@@ -147,10 +139,8 @@ function NgoRegistration() {
 
         <button type="submit" className={styles.submitButton}>Register</button>
       </form>
-       {/* Optional: Link to login */}
-      {/* <p className={styles.switchFormText}>Already registered? <Link to="/ngo/login">Login here</Link></p> */} 
     </div>
   );
 }
 
-export default NgoRegistration; 
+export default NgoRegistration;

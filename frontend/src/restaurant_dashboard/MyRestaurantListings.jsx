@@ -102,7 +102,6 @@ function MyRestaurantListings() {
       return; // Stop if user cancels
     }
 
-    console.log("Proceeding with delete for listing:", listingId);
     setError(''); // Clear previous errors
 
     const token = localStorage.getItem('restaurantToken');
@@ -128,8 +127,6 @@ function MyRestaurantListings() {
 
       // If successful, remove the listing from the local state
       setListings(currentListings => currentListings.filter(l => l._id !== listingId));
-      // Optionally, show a success message
-      console.log("Listing deleted successfully:", listingId); 
 
     } catch (err) {
        console.error("Error deleting listing:", err);
@@ -232,4 +229,4 @@ function MyRestaurantListings() {
   );
 }
 
-export default MyRestaurantListings; 
+export default MyRestaurantListings;

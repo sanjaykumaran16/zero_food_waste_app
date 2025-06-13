@@ -3,12 +3,12 @@ const mongoose = require('mongoose');
 const RequestSchema = new mongoose.Schema({
   foodId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Food', // Reference to the Food model
+    ref: 'Food',
     required: [true, 'Food item reference is required'],
   },
   ngoId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'NGO', // Reference to the NGO model
+    ref: 'NGO',
     required: [true, 'NGO reference is required'],
   },
   requestTime: {
@@ -19,7 +19,6 @@ const RequestSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
-  // Consider adding a status field here if needed later, e.g., 'Pending', 'Accepted', 'Rejected'
 });
 
 module.exports = mongoose.model('Request', RequestSchema);

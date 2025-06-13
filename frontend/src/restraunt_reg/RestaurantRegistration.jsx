@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import styles from './RestaurantRegistration.module.css'; // CSS module for styling
-import { FaUtensils, FaEnvelope, FaLock, FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa'; // Import icons
-// If using react-router for navigation after registration:
-// import { useNavigate } from 'react-router-dom'; 
+import styles from './RestaurantRegistration.module.css';
+import { FaUtensils, FaEnvelope, FaLock, FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa';
 
 function RestaurantRegistration() {
   // const navigate = useNavigate(); // Uncomment if using react-router navigation
@@ -41,7 +39,7 @@ function RestaurantRegistration() {
     }
 
     try {
-      const response = await fetch('/api/restaurants/register', { // Use relative path for proxy
+      const response = await fetch('/api/restaurants/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData), // Send all form data
@@ -55,9 +53,8 @@ function RestaurantRegistration() {
       }
 
       // Handle successful registration
-      console.log('Registration successful:', data);
       setSuccess('Restaurant registered successfully! You can now log in.');
-      setFormData({ name: '', email: '', password: '', address: '', contactNumber: '' }); // Clear form
+      setFormData({ name: '', email: '', password: '', address: '', contactNumber: '' });
       
       // Optional: Store token/user info if returned by backend
       // if(data.token) {
@@ -109,9 +106,8 @@ function RestaurantRegistration() {
 
         <div className={styles.formGroup}>
           <label htmlFor="address">Address <span className={styles.required}>*</span></label>
-          <div className={styles.inputGroup}> 
-             {/* Icon might be slightly awkward for textarea, optional */}
-            <FaMapMarkerAlt className={styles.inputIcon} style={{ marginTop: '0.8rem' }} /> 
+          <div className={styles.inputGroup}>
+            <FaMapMarkerAlt className={styles.inputIcon} style={{ marginTop: '0.8rem' }} />
             <textarea id="address" value={address} onChange={handleChange} placeholder="123 Main Street, City" required />
           </div>
         </div>
@@ -124,14 +120,12 @@ function RestaurantRegistration() {
           </div>
         </div>
 
-        <button type="submit" className={styles.submitButton} disabled={loading}> {/* Disable button when loading */}
-          {loading ? 'Registering...' : 'Register'} {/* Change button text */} 
+        <button type="submit" className={styles.submitButton} disabled={loading}>
+          {loading ? 'Registering...' : 'Register'}
         </button>
       </form>
-      {/* Optional: Add link to login page */}
-      {/* <p>Already have an account? <a href="/restaurant/login">Login here</a></p> */}
     </div>
   );
 }
 
-export default RestaurantRegistration; 
+export default RestaurantRegistration;

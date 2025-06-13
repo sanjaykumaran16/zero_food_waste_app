@@ -33,10 +33,9 @@ function RestaurantLogin() {
       if (!response.ok) {
         // Use error message from backend if available
         throw new Error(data.message || `HTTP error! status: ${response.status}`);
-      }
+    }
 
-      // Handle successful login 
-      console.log('Login successful:', data);
+      // Handle successful login
       // Store token (ensure your backend actually sends a token named 'token')
       if (data.token) {
         localStorage.setItem('restaurantToken', data.token);
@@ -48,9 +47,6 @@ function RestaurantLogin() {
         setError('Login failed: Could not authenticate session.');
       }
       // Remove placeholder alert
-      // localStorage.setItem('userInfo', JSON.stringify(data)); // Store user info if needed
-      // alert('Login successful! Token stored.'); 
-
     } catch (err) {
       console.error('Login error:', err);
       setError(err.message || 'Login failed. Please check your credentials.');
@@ -102,4 +98,4 @@ function RestaurantLogin() {
   );
 }
 
-export default RestaurantLogin; 
+export default RestaurantLogin;

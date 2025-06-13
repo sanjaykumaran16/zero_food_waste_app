@@ -1,10 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import styles from './Sidebar.module.css'; // Import CSS module
-import { FaTimes, FaBell } from 'react-icons/fa'; // Import close icon and Bell icon
+import styles from './Sidebar.module.css';
+import { FaTimes, FaBell } from 'react-icons/fa';
 
-// Assuming you might want icons later
-// import { FaTachometerAlt, FaPlusCircle, FaUtensils, FaHandsHelping, FaListAlt } from 'react-icons/fa';
 
 function Sidebar({ isOpen, closeSidebar, currentUser }) {
   // Combine base class with conditional class for open state
@@ -34,8 +32,8 @@ function Sidebar({ isOpen, closeSidebar, currentUser }) {
           </NavLink>
         </li>
         <li>
-          <NavLink 
-            to="/restaurant/dashboard/add" 
+          <NavLink
+            to="/restaurant/dashboard/add"
             className={({ isActive }) => isActive ? `${styles.navLink} ${styles.active}` : styles.navLink}
             onClick={closeSidebar}
           >
@@ -54,9 +52,8 @@ function Sidebar({ isOpen, closeSidebar, currentUser }) {
           </NavLink>
         </li>
          <li>
-          {/* Notification Link with Badge */}
-          <NavLink 
-            to="/restaurant/dashboard/notifications" 
+          <NavLink
+            to="/restaurant/dashboard/notifications"
             className={({ isActive }) => isActive ? `${styles.navLink} ${styles.active}` : styles.navLink}
             onClick={closeSidebar}
           >
@@ -96,10 +93,9 @@ function Sidebar({ isOpen, closeSidebar, currentUser }) {
              Available Donations
           </NavLink>
         </li>
-         {/* Add other NGO links later? e.g., Request History, Profile */}
       </>
     );
-  } // Add admin userType check later if needed
+  }
 
   // If no userType (e.g., on homepage where hamburger isn't shown), 
   // sidebar might still be forced open via dev tools, so render empty or default state.
@@ -115,7 +111,7 @@ function Sidebar({ isOpen, closeSidebar, currentUser }) {
       
       <nav className={sidebarClass}>
         <button className={styles.closeButton} onClick={closeSidebar}>
-          <FaTimes /> {/* Use the icon component */}
+          <FaTimes />
         </button>
         
         <h3 className={styles.sidebarTitle}>{sidebarTitle}</h3>
@@ -129,4 +125,4 @@ function Sidebar({ isOpen, closeSidebar, currentUser }) {
   );
 }
 
-export default Sidebar; 
+export default Sidebar;

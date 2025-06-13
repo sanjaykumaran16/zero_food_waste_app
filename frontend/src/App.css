@@ -1,8 +1,4 @@
-/* Remove default Vite logo/card styles if not needed, or keep them if you plan to use them elsewhere */
-/* Example: Remove everything from #root down to .read-the-docs */
-
 :root {
-  /* Light Theme Variables */
   --bg-primary: #ffffff;
   --bg-secondary: #f4f7f6;
   --bg-gradient-start: #166d38;
@@ -31,43 +27,37 @@
   --success-text: #155724;
   --success-bg: #d4edda;
   --success-border: #c3e6cb;
-  --primary-color: #4CAF50; /* Green */
-  --secondary-color: #ff9800; /* Orange */
-  --accent-color: #f44336; /* Red */
+  --primary-color: #4CAF50;
+  --secondary-color: #ff9800;
+  --accent-color: #f44336;
   --text-color: #333;
   --border-color: #ddd;
   --link-hover-color: var(--primary-color);
   --shadow-color: rgba(0, 0, 0, 0.1);
   --navbar-bg: var(--bg-primary);
   --navbar-text: var(--text-color);
-  --navbar-active-bg: #eee; /* Light grey background for active nav link */
-  --navbar-active-text: var(--primary-color); /* Green text/icon for active nav link */
-  --sidebar-bg: #343a40; /* Dark grey */
-  --sidebar-text: #f8f9fa; /* Light grey */
-  --sidebar-hover-bg: #495057; /* Slightly lighter grey */
-  --sidebar-active-bg: var(--primary-color); /* Green for active */
+  --navbar-active-bg: #eee;
+  --navbar-active-text: var(--primary-color);
+  --sidebar-bg: #343a40;
+  --sidebar-text: #f8f9fa;
+  --sidebar-hover-bg: #495057;
+  --sidebar-active-bg: var(--primary-color);
   --sidebar-active-text: #ffffff;
   --form-bg: var(--bg-primary);
   --input-focus-border: #80bdff;
   --input-focus-shadow: rgba(0, 123, 255, 0.25);
-  --section-bg: var(--card-bg); /* Added for section backgrounds */
+  --section-bg: var(--card-bg);
 
-  /* Gradients */
   --green-gradient: linear-gradient(90deg, rgba(76,175,80,1) 0%, rgba(56,142,60,1) 100%);
 }
 
 #root.dark-mode {
-  /* Dark Theme Variable Overrides */
   --bg-primary: #121212;
   --bg-secondary: #1e1e1e;
-  /* Keep green gradient for navbar, but could adjust if needed */
-  /* --bg-gradient-start: #0a3d1e; */
-  /* --bg-gradient-end: #0f5128; */
   --text-primary: #e0e0e0;
   --text-secondary: #b0b0b0;
   --text-muted: #888888;
-  /* --text-on-gradient: #ffffff; /* Stays same */
-  --accent-primary: #28a745; /* Maybe a brighter green */
+  --accent-primary: #28a745;
   --accent-primary-darker: #1f8a39;
   --accent-primary-hover-bg: rgba(40, 167, 69, 0.15);
   --card-bg: #2a2a2a;
@@ -80,41 +70,38 @@
   --input-focus-border: var(--accent-primary);
   --input-focus-shadow: rgba(40, 167, 69, 0.2);
   --link-color: var(--accent-primary);
-  /* --button-text: #ffffff; /* Stays same */
   --error-text: #f8d7da;
   --error-bg: #721c24;
   --error-border: #f5c6cb;
   --success-text: #d4edda;
   --success-bg: #155724;
   --success-border: #c3e6cb;
-  --primary-color: #66bb6a; /* Lighter Green */
-  --secondary-color: #ffa726; /* Lighter Orange */
-  --accent-color: #ef5350; /* Lighter Red */
-  --text-color: #e0e0e0; /* Light Grey */
+  --primary-color: #66bb6a;
+  --secondary-color: #ffa726;
+  --accent-color: #ef5350;
+  --text-color: #e0e0e0;
   --border-color: #444;
   --link-hover-color: var(--primary-color);
   --button-text: #ffffff;
   --shadow-color: rgba(255, 255, 255, 0.1);
   --navbar-bg: var(--bg-secondary);
   --navbar-text: var(--text-color);
-  --navbar-active-bg: #333; /* Darker grey background for active nav link */
-  --navbar-active-text: var(--primary-color); /* Lighter green text/icon */
-  --sidebar-bg: #212529; /* Very dark */
+  --navbar-active-bg: #333;
+  --navbar-active-text: var(--primary-color);
+  --sidebar-bg: #212529;
   --sidebar-text: #e0e0e0;
   --sidebar-hover-bg: #343a40;
   --sidebar-active-bg: var(--primary-color);
-  --sidebar-active-text: #121212; /* Dark text on light green */
+  --sidebar-active-text: #121212;
   --form-bg: var(--bg-secondary);
   --input-focus-border: #66bb6a;
   --input-focus-shadow: rgba(102, 187, 106, 0.25);
-  --section-bg: #000000; /* Added: Black background for sections in dark mode */
+  --section-bg: #000000;
 
-  /* Add background for glittering stars */
   background-color: var(--bg-primary);
   
-  /* Glittering Stars Effect */
-  position: relative; /* Needed for pseudo-elements */
-  overflow: hidden; /* Prevent stars spilling out */
+  position: relative;
+  overflow: hidden;
 }
 
 #root.dark-mode::before,
@@ -123,14 +110,13 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 200%; /* Make wide to allow seamless animation */
+  width: 200%;
   height: 100%;
-  pointer-events: none; /* Don't interfere with clicks */
-  z-index: -1; /* Behind content */
+  pointer-events: none;
+  z-index: -1;
 }
 
 #root.dark-mode::before {
-  /* Tiny stars */
   background: radial-gradient(1px 1px at 20px 30px, #eee, rgba(0,0,0,0)),
               radial-gradient(1px 1px at 40px 70px, #fff, rgba(0,0,0,0)),
               radial-gradient(1px 1px at 50px 160px, #ddd, rgba(0,0,0,0)),
@@ -142,7 +128,6 @@
 }
 
 #root.dark-mode::after {
-  /* Slightly larger/different stars */
    background: radial-gradient(1.5px 1.5px at 50px 20px, #ffffff, rgba(0,0,0,0)),
                radial-gradient(2px 2px at 100px 60px, #dddddd, rgba(0,0,0,0)),
                radial-gradient(1px 1px at 150px 150px, #ffffff, rgba(0,0,0,0));
@@ -152,163 +137,106 @@
 
 @keyframes twinkle {
   from { transform: translateX(0); }
-  to { transform: translateX(-200px); } /* Adjust based on background-size */
+  to { transform: translateX(-200px); }
 }
 
-/* --- Global Styles (Optional) --- */
 #root {
-  /* Remove max-width and margin to allow children like navbar to be full width */
   max-width: none; 
   margin: 0;
-  /* Remove padding if handled by components */
   padding: 0; 
-  /* text-align: center; */ /* Removed global center alignment */
-  /* overflow-x: hidden; */ /* Removed this - applying shadow conditionally instead */
-  /* Apply base background and text color */
   background-color: var(--bg-primary);
   color: var(--text-primary);
-  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth theme transition */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Add overflow-x hidden to the root container to clip sidebar shadow */
-/* .rootContainer {
-  overflow-x: hidden;
-} */ /* Removed this rule */
-
-/* --- Navbar Styles --- */
 .appNavbar {
-  background: linear-gradient(90deg, var(--bg-gradient-start), var(--bg-gradient-end)); /* Green Gradient */
-  padding: 0.8rem 1rem; /* Adjust horizontal padding as needed */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* Keep dark shadow for contrast */
-  margin-bottom: 0; /* Remove margin if main content has padding */
-  width: 100%; /* Ensure it spans full width */
-  box-sizing: border-box; /* Include padding in width */
-  display: flex; /* Use flexbox for alignment */
-  align-items: center; /* Center items vertically */
-  position: relative; /* For potential absolute positioning inside */
+  background: linear-gradient(90deg, var(--bg-gradient-start), var(--bg-gradient-end));
+  padding: 0.8rem 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  margin-bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  position: relative;
 }
 
-/* Hamburger Button Styles */
 .hamburgerButton {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 8px; /* Adjust padding */
+  padding: 8px;
   margin-right: 15px; 
-  display: flex; /* Keep flex for centering */
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem; /* Control icon size via font-size */
+  font-size: 1.5rem;
   color: var(--text-on-gradient);
   z-index: 10; 
-  border-radius: 4px; /* Added for smoother hover background */
-  transition: background-color 0.3s ease, color 0.3s ease; /* Add transitions */
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Hover effect for hamburger */
 .hamburgerButton:hover {
-  background-color: var(--text-on-gradient); /* White background */
-  color: var(--accent-primary); /* Primary Green icon */
+  background-color: var(--text-on-gradient);
+  color: var(--accent-primary);
 }
-
-/* TODO: Add animation for hamburger icon when sidebar is open */
-/* Example: Cross animation */
-/* .hamburgerButton.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); } */
-/* .hamburgerButton.open span:nth-child(2) { opacity: 0; } */
-/* .hamburgerButton.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); } */
 
 .navList {
   list-style: none;
   display: flex;
-  /* Justify content to center or start as preferred */
-  /* justify-content: center; Removed to allow hamburger on left */
-  margin: 0; /* Reset margin */
+  margin: 0;
   align-items: center;
-  gap: 2rem; /* Increased space between links */
-  padding: 0; /* Reset padding */
-  flex-grow: 1; /* Allow list to take remaining space */
-  justify-content: center; /* Center the links within the remaining space */
+  gap: 2rem;
+  padding: 0;
+  flex-grow: 1;
+  justify-content: center;
 }
 
 .navList li {
-  padding: 0.3rem 0; /* Add some padding for hover effect */
+  padding: 0.3rem 0;
 }
 
-.navList a { /* Target the Link component */
-  color: var(--text-on-gradient); /* Keep White link text */
+.navList a {
+  color: var(--text-on-gradient);
   text-decoration: none;
   font-size: 1.1rem;
   font-weight: 500;
-  padding: 0.5rem 0.8rem; /* Padding for click area and hover */
+  padding: 0.5rem 0.8rem;
   border-radius: 4px;
-  position: relative; /* Needed for pseudo-element underline */
-  transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transitions */
-  /* Add display flex to align icon and text if needed */
-  display: inline-flex; /* Helps align icon */
-  align-items: center; /* Vertically center icon */
+  position: relative;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
 }
 
-/* Style for the icons within the links */
 .navList a svg {
-  /* Add transition for the scale and color effect */
   transition: transform 0.3s ease, color 0.3s ease;
-  vertical-align: middle; /* Better alignment */
-  /* Ensure initial icon color is white like the text */
+  vertical-align: middle;
   color: var(--text-on-gradient);
-  /* Adjust margin if the inline style is removed from App.jsx */
-  /* margin-right: 5px; */
 }
 
-/* Hover effect for links */
 .navList a:hover,
-.navList a:focus { /* Style focus for accessibility */
-  /* Change background to white */
-  background-color: var(--text-on-gradient); 
+.navList a:focus {
+  background-color: var(--text-on-gradient);
   outline: none;
-  /* Apply the same color change to the text on hover/focus if desired */
-  /* color: #800000; */ /* Example: Maroon text */
 }
 
-/* Style for the active link */
 .navList a.active {
-  background-color: var(--text-on-gradient); /* White background for active link */
-  /* Optionally, change text color for active link */
-  /* color: #800000; */ /* Example: Maroon text */
+  background-color: var(--text-on-gradient);
 }
 
-/* Add hover/focus/active effect for the icon */
 .navList a:hover svg,
 .navList a:focus svg,
 .navList a.active svg {
-  transform: scale(1.2); /* Keep icon slightly larger */
-  /* Change icon color to green */
+  transform: scale(1.2);
   color: var(--accent-primary);
 }
 
-/* Optional: Underline effect on hover */
-/* 
-.navList a::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -2px; 
-  left: 50%;
-  background-color: #ffffff;
-  transition: width 0.3s ease, left 0.3s ease;
-}
-
-.navList a:hover::after {
-  width: 100%;
-  left: 0;
-} 
-*/
-
-/* Add keyframes for fade-in */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(10px); /* Optional: slight move up */
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
@@ -316,17 +244,14 @@
   }
 }
 
-/* --- Main Content Container --- */
 .mainContentContainer {
-  max-width: 1100px; /* Consistent max-width */
-  margin: 0 auto; /* Center the container */
-  padding: 2rem 1.5rem 4rem; /* Increased top/bottom padding */
-  width: 100%; /* Ensure it takes up available space */
-  box-sizing: border-box; /* Include padding in width calculation */
-  /* Animation removed, will be handled by Framer Motion */
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* Change cursor to pointer on hover for common input types */
 input[type="text"]:hover,
 input[type="search"]:hover,
 input[type="email"]:hover,
@@ -338,18 +263,18 @@ textarea:hover {
   cursor: pointer;
 }
 
-/* Placeholder/Spinner during load? */
-{showHamburger && isLoadingUser && (
-  <div style={{marginLeft: 'auto', paddingRight: '1rem', color: '#1a8a46'}}>...</div> /* Changed color */
-)}
 
-/* Placeholder for loading spinner */
-#root.dark-mode .loadingPlaceholder {
-  color: var(--accent-primary); /* Adjust if needed */
+.appNavbar .loadingPlaceholder {
+  margin-left: auto;
+  padding-right: 1rem;
+  color: #1a8a46;
 }
 
-/* Apply variables to the existing spinner placeholder */
-.loadingPlaceholder { /* Add a class if the inline style is removed */
+#root.dark-mode .loadingPlaceholder {
+  color: var(--accent-primary);
+}
+
+.loadingPlaceholder {
   margin-left: auto;
   padding-right: 1rem;
   color: var(--accent-primary);

@@ -17,7 +17,6 @@ const RestaurantSchema = new mongoose.Schema({
   password: {
     type: String,
     required: [true, 'Please add a password'],
-    // Consider adding minlength and select: false after hashing is implemented
   },
   address: {
     type: String,
@@ -27,12 +26,10 @@ const RestaurantSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Please add a contact number'],
   },
-  createdAt: { // Adding a timestamp for record creation
+  createdAt: {
     type: Date,
     default: Date.now,
   },
 });
-
-// Remember to implement password hashing (e.g., using bcryptjs) before saving!
 
 module.exports = mongoose.model('Restaurant', RestaurantSchema);
