@@ -1,7 +1,9 @@
-🌱 Purpose
+**🌱 Purpose**
+
 Millions of tons of food are wasted every year while many go hungry. Share A Spoon is built with the vision to bridge this gap. By enabling restaurants, events, and individuals to donate excess food in real time, the app ensures that surplus food reaches the right hands before it goes to waste.
 
-🧩 Features
+**🧩 Features**
+
 Donor registration – Restaurants, caterers, and individuals can register to donate surplus food.
 
 Live food availability listings – Real-time posting of available food with quantity, pickup time, and location.
@@ -14,22 +16,26 @@ Authentication – Secure login/signup for donors and recipients.
 
 Real-time status updates – Track donation status from posting to pickup.
 
-🛠️ Tech Stack
-Frontend
+**🛠️ Tech Stack**
+
+**Frontend**
+
 React.js (with Vite)
 
 CSS for styling
 
 Axios for API communication
 
-Backend
+**Backend**
+
 Node.js
 
 Express.js
 
 MongoDB with Mongoose
 
-Tools & Libraries
+**Tools & Libraries**
+
 JWT for authentication
 
 dotenv for environment management
@@ -38,7 +44,8 @@ react-toastify for notifications
 
 React Router for navigation
 
-💡 Future Enhancements
+**💡 Future Enhancements**
+
 Delivery partner integration
 
 Interactive map for pickup locations
@@ -47,7 +54,8 @@ Mobile app using React Native
 
 Notification system for request alerts
 
-🤝 Team
+**🤝 Team**
+
 Sanjay Kumaran – Backend, React integration
 
 Calvin – UI/UX and frontend
